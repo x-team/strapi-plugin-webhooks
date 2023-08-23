@@ -52,7 +52,7 @@ async function handleEvent (event, info) {
     .filter(webhook => webhook.enabled)
     .forEach(async webhook => {
       try {
-        const events = JSON.parse(webhook.events)
+        const { events } = webhook
         if (events.includes(modelStar) || events.includes(modelEvent)) {
           const res = await runWebhook({ webhook, event, info })
           strapi.log.info(

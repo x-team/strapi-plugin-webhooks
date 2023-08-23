@@ -18,10 +18,10 @@
       "type": "string"
     },
     "headers": {
-      "type": "string"
+      "type": "json"
     },
     "events": {
-      "type": "string"
+      "type": "json"
     },
     "enabled": {
       "type": "boolean"
