@@ -1,0 +1,54 @@
+{
+  "name": "strapi-plugin-webhooks",
+  "version": "1.0.0",
+  "description": "A slightly better version of strapi's built-in webhooks.",
+  "scripts": {
+    "lint": "eslint --no-ignore package.json \"**/*.js\" --format=pretty",
+    "lint-fix": "eslint package.json \"**/*.js\" --no-ignore --fix --format=pretty",
+    "format": "prettier-standard package.json \"**/*.js\" && npm run lint-fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js}": [
+      "npm run format",
+      "git add"
+    ]
+  },
+  "strapi": {
+    "name": "webhooks",
+    "icon": "plug",
+    "description": "A slightly better version of strapi's built-in webhooks."
+  },
+  "dependencies": {
+    "node-fetch": "2.6.7"
+  },
+  "author": {
+    "name": "X-Team",
+    "email": "contact@x-team.com",
+    "url": "https://x-team.com"
+  },
+  "engines": {
+    "node": ">=10.16.0 <=14.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^10.2.11",
+    "prettier-standard": "^16.4.1",
+    "eslint": "^7.4.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-formatter-pretty": "^4.0.0",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-jest": "^23.18.0",
+    "eslint-plugin-json": "^2.1.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
+  }
+}
